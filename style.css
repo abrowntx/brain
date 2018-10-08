@@ -30,3 +30,9 @@ span {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
+P,A,A:visited {
+    font-size: 30px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}

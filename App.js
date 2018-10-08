@@ -15,23 +15,29 @@ var CorrectTimer;
 
 
 function KillInterval() {
-    clearInterval(inter);
-    clearInterval(FadeTimer);
     ClearBottom();
     ClearTop();
+    clearInterval(inter);
+    clearInterval(FadeTimer);
+
     inter = setInterval(function(){ RowLoad(); }, RoundLength)
 }
 
 
 function Start(){
-    setTimeout(function(){ document.getElementById("Plus").src = "img/3.png" }, 1000);
-    setTimeout(function(){ document.getElementById("Plus").src = "img/2.png" }, 1000);
-    setTimeout(function(){ document.getElementById("Plus").src = "img/1.png" }, 1000);
-    //setTimeout(function(){ document.getElementById("Plus").src = "img/blank.png" }, 250);
-    //initial interval setting
-    var inter = setInterval(function(){ RowLoad(); }, RoundLength);
-    //initial round load
-    setTimeout(function(){ RowLoad(); }, CorrectTime)
+    setTimeout(function(){
+        document.getElementById("Plus").src = "img/3.png"
+        setTimeout(function(){
+            document.getElementById("Plus").src = "img/2.png"
+            setTimeout(function(){
+                document.getElementById("Plus").src = "img/1.png"
+                    //initial interval setting
+                    var inter = setInterval(function(){ RowLoad(); }, RoundLength);
+                    //initial round load
+                    setTimeout(function(){ RowLoad(); }, CorrectTime)
+            }, 1000);
+        }, 1000);
+    }, 1000);
 };
 
 //Left/Right Button Presses
